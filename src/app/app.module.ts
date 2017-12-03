@@ -1,21 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-//import { routing, appRoutingProviders } from './app.routing';
-
-import { AppComponent } from './app.component';
-import { CronoComponent } from './components/crono/crono.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { AppComponent } from './app.component';
+import { CronoComponent } from './crono/crono.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        CronoComponent
+        CronoComponent,
+        PageNotFoundComponent,
+        DashboardComponent,
     ],
     imports: [
         BrowserModule,
-//        routing,
         AppRoutingModule
     ],
     providers: [],

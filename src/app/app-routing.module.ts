@@ -1,27 +1,22 @@
 import { NgModule } from '@angular/core';
-import { RouteModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-import { CronoComponent} from './components/crono/crono.component';
+import { CronoComponent} from './crono/crono.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 const appRoutes: Routes = [
-    {
-        path: '',
-        component: CronoComponent
-    },
-    {
-        path: 'crono', 
-        component: CronoComponent
-    },
-    {
-        path: '**',
-        component: CronoComponent
-    }
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'crono', component: CronoComponent },
+    { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
   imports: [
-      RouteModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes)
   ],
-    exports: [RouteModule]
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }
